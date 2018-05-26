@@ -9,6 +9,10 @@
     "@icedesign/layout": "^0.1.2",
     "@icedesign/menu": "^0.1.0",
     "@icedesign/skin": "^0.1.0",
+    "js-base64": "^2.4.5",
+    "moment": "^2.22.1",
+    "nebpay": "0.0.5",
+    "nebulas": "^0.5.0",
     "prop-types": "^15.5.8",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2"
