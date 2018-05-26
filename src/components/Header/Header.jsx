@@ -14,25 +14,12 @@ const MENUS = [
         path: 'https://github.com/kun368/NasFitness/issues/new',
     },
     {
-        name: '下载Chrome插件',
-        path: 'https://github.com/ChengOrangeJu/WebExtensionWallet',
+        name: '开发者',
+        path: 'http://www.zzkun.com',
     },
     {
-        name: '友情PasteBin服务',
-        children: [
-            {
-                name: 'PasteBin 1',
-                path: 'https://paste.ubuntu.com/',
-            },
-            {
-                name: 'PasteBin 2',
-                path: 'https://pastebin.com/',
-            },
-            {
-                name: 'PasteBin 3',
-                path: 'https://pastebin.ca/',
-            },
-        ],
+        name: '下载Chrome插件',
+        path: 'https://github.com/ChengOrangeJu/WebExtensionWallet',
     },
 ];
 

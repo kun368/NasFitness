@@ -29,17 +29,28 @@ export default class PlatformJoinUs extends Component {
       >
         <div>
           <div style={styles.titleWrapper}>
-            <h2 style={styles.title}>现在就加入我们</h2>
+            <h2 style={styles.title}>现在就开始</h2>
             <p>
-              在人工智能将替代一切的未来<br />唯有内容的创作无可替代
+              在区块链即将结合一切的未来<br />唯有马上开始使用和创作无可替代
             </p>
           </div>
           <div style={styles.buttons}>
-            <Button style={styles.secondaryButton} type="normal">
-              开通
+            <Button
+                style={styles.secondaryButton}
+                type="normal"
+                component="a"
+                href="/"
+            >
+              立即使用
             </Button>
-            <Button style={styles.primaryButton} type="primary">
-              登录
+            <Button
+                style={styles.primaryButton}
+                type="primary"
+                component="a"
+                href="https://incentive.nebulas.io/cn/signup.html?invite=OILxo"
+                target="_blank"
+            >
+              我也要开发！
             </Button>
           </div>
         </div>

@@ -53,10 +53,14 @@ export default class UserForm extends Component {
             if (errors) {
                 return;
             }
+            if (!values.recordDate || !values.recordTime) {
+                Toast.error("请输入此数据的测量日期！");
+                return;
+            }
 
             const date = moment(values.recordDate).format("YYYYMMDD");
-            const time = moment(values.recordTime).format("hh:mm:ss");
-            const sec = moment(date + " " + time, 'YYYYMMDD hh:mm:ss').unix() * 1000;
+            const time = moment(values.recordTime).format("HH:mm:ss");
+            const sec = moment(date + " " + time, 'YYYYMMDD HH:mm:ss').unix();
 
             if (!NebUtils.checkInstalledPlugin()) {
                 Toast.error('还未安装Chrome扩展，请点击页面上方的下载按钮');
@@ -81,7 +85,7 @@ export default class UserForm extends Component {
                         ref="form"
                     >
                         <div style={styles.formContent}>
-                            <h2 style={styles.formTitle}>记录身体状态</h2>
+                            <h2 style={styles.formTitle}>记录身体状态（选填）</h2>
 
                             <Row style={styles.formItem}>
                                 <Col xxs="6" s="4" l="4" style={styles.formLabel}>
@@ -256,7 +260,7 @@ export default class UserForm extends Component {
 
                             <Row style={styles.formItem}>
                                 <Col xxs="6" s="4" l="4" style={styles.formLabel}>
-                                    记录时间：
+                                    测量时间：
                                 </Col>
                                 <Col s="14" l="16">
                                     <IceFormBinder name="recordDate">

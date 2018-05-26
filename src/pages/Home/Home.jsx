@@ -24,7 +24,6 @@ export default class Home extends Component {
                 <UserForm/>
                 <PlatformToolsIntro/>
                 <PlatformIntro/>
-                <PlatformBlackIntro/>
                 <PlatformJoinus/>
                 <Footer/>
             </div>
