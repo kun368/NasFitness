@@ -28,6 +28,8 @@ export default class PlatformIntro extends Component {
         this.state = {
             dataSource: [],
             prepared: false,
+            fitScore: '准备数据中...',
+            userAddress: null,
             echartsOption: {
                 title: {
                     text: `曲线图`
@@ -67,6 +69,9 @@ export default class PlatformIntro extends Component {
             Toast.error('还未安装Chrome扩展，为了体验全部功能，请点击页面上方的下载按钮！');
         }
         NebUtils.getPluginUserAddress(addr => {
+            this.setState({
+                userAddress: addr
+            });
             NebUtils.userCallAxios(
                 "queryMyRecord",
                 `["${addr}"]`,
@@ -78,9 +83,17 @@ export default class PlatformIntro extends Component {
                         dataSource: resp,
                         prepared: true
                     });
+                    this.genFitScore();
                     this.renderSpecific("体重", "tizhong", "KG");
                 },
             );
+        })
+    }
+
+    genFitScore() {
+        // todo：计算用户身体质量评分
+        this.setState({
+            fitScore: '90分',
         })
     }
 
@@ -150,7 +163,7 @@ export default class PlatformIntro extends Component {
         return (
             <div style={styles.wrapper}>
                 <div style={styles.body}>
-                    <h2 style={styles.title}>身体状况分析</h2>
+                    <h2 style={styles.title}>身体状况分析（{this.state.fitScore}）</h2>
                     <p style={styles.text}>
                         了解自己的身体各方面变化情况
                         <br/>
