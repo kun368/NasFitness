@@ -85,7 +85,7 @@ export default class UserForm extends Component {
                         ref="form"
                     >
                         <div style={styles.formContent}>
-                            <h2 style={styles.formTitle}>记录身体状态（选填）</h2>
+                            <h2 style={styles.formTitle}>记录身体状态（可选填部分）</h2>
 
                             <Row style={styles.formItem}>
                                 <Col xxs="6" s="4" l="4" style={styles.formLabel}>
