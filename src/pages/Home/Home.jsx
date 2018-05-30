@@ -5,13 +5,8 @@ import PlatformIntro from './components/PlatformIntro';
 import PlatformToolsIntro from './components/PlatformToolsIntro';
 import PlatformLanding from './components/PlatformLanding';
 import UserForm from "./components/UserForm/UserForm";
-import GaugeCarChart from "./components/GaugeCarChart/GaugeCarChart";
-import RadarChart from "./components/RadarChart/RadarChart";
-import ReviewDetailInfo from "./components/ReviewDetailInfo/ReviewDetailInfo";
 import NebUtils from "../../util/NebUtils";
-import {Base64} from 'js-base64';
-import moment from 'moment';
-import {Feedback, Button} from '@icedesign/base';
+import {Feedback} from '@icedesign/base';
 import RealTimeStatistics from "./components/RealTimeStatistics/RealTimeStatistics";
 
 const Toast = Feedback.toast;
@@ -66,9 +61,6 @@ export default class Home extends Component {
           userAddress={this.state.userAddress}
         />
         <UserForm/>
-
-        {/*<RadarChart/>*/}
-        {/*<ReviewDetailInfo/>*/}
         <PlatformToolsIntro/>
         <Footer/>
       </div>

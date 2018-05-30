@@ -29,7 +29,7 @@ export default class PlatformLanding extends Component {
           </h2>
           <h5 style={styles.title2}>
             星云健身助手是基于NAS智能合约的去中心化健身辅助平台。
-            可以帮助您永久安全保存健身数据到区块链，并提供非常专业的身体状况分析。
+            可以帮助您永久安全保存健身数据到区块链，并提供专业的身体状况分析。
             让您见证自我身体奇迹。
           </h5>
 
@@ -46,7 +46,6 @@ export default class PlatformLanding extends Component {
             <Button
               type="primary"
               component="a"
-              target="_blank"
               href="/#/Help"
             >
               <Icon type="form" /> 查看使用帮助

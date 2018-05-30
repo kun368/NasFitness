@@ -10,6 +10,7 @@ import {
 import NebUtils from '../../../../util/NebUtils.js'
 import {Base64} from 'js-base64';
 import moment from 'moment';
+import $ from 'jquery';
 
 const Toast = Feedback.toast;
 const {Row, Col} = Grid;
@@ -47,6 +48,10 @@ export default class UserForm extends Component {
     });
   };
 
+  scrollTop() {
+    $("html,body").animate({scrollTop: 0}, 500);
+  }
+
   validateAllFormField = () => {
     this.refs.form.validateAll((errors, values) => {
       console.log('values', values);
@@ -69,7 +74,8 @@ export default class UserForm extends Component {
         function: 'createRecord',
         args: `["${sec}", "${values.tizhong}", "${values.shengao}", "${values.tizhilv}", "${values.xiongwei}", "${values.yaowei}", "${values.tunwei}", "${values.datuiwei}", "${values.xiaotuiwei}", "${values.biwei}"]`,
       };
-      NebUtils.pluginCall(contract.function, contract.args, (txHash) => {
+      this.scrollTop();
+      NebUtils.nebPayCall(contract.function, contract.args, true, (txHash) => {
         Toast.success("已提交交易，交易成功即记录身体状况成功！")
       });
     });
