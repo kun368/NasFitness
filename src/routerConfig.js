@@ -4,6 +4,7 @@
 
 import BlankLayout from './layouts/BlankLayout';
 import Home from './pages/Home';
+import Help from './pages/Help';
 import NotFound from './pages/NotFound';
 
 const routerConfig = [
@@ -11,6 +12,11 @@ const routerConfig = [
     path: '/',
     layout: BlankLayout,
     component: Home,
+  },
+  {
+    path: '/Help',
+    layout: BlankLayout,
+    component: Help,
   },
   {
     path: '*',
